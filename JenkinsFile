@@ -3,7 +3,7 @@
 stage 'Dev'
 node {
     checkout scm
-    gradle 'clean sayHello'
+   sh gradle 'clean sayHello'
     dir('target') {stash name: 'war', includes: 'x.war'}
 }
 
