@@ -3,7 +3,7 @@
 stage 'Dev'
 node {
     checkout scm
-    mvn 'clean package'
+    gradle 'clean sayHello'
     dir('target') {stash name: 'war', includes: 'x.war'}
 }
 
@@ -43,11 +43,4 @@ def runTests(duration) {
         }
     }
 
-def deploy(id) {
-    unstash 'war'
-    sh "cp x.war /tmp/${id}.war"
-}
 
-def undeploy(id) {
-    sh "rm /tmp/${id}.war"
-}
