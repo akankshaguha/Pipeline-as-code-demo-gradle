@@ -5,8 +5,9 @@ package com.aniruddha.hello;
  */
 public class Hello {
     private final String sayStatement;
+
     public Hello(String s) {
-        this.sayStatement=s;
+        this.sayStatement = s;
     }
 
     public String sayHello() {
