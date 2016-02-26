@@ -11,6 +11,9 @@ repositories {
 task createBuild << {
     new File("built.txt").write("Hey this is aniruddha\n")
 }
+task sayHello<<{
+    println 'Hello'
+}
 dependencies {
     testCompile group: 'junit', name: 'junit', version: '4.11'
 }
