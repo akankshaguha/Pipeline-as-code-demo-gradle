@@ -1,8 +1,8 @@
 node{
 git 'https://github.com/exorcist007/JenkinsWorkFlowBuild.git'
- gradle createBuild
+ cmd /k gradle createBuild
 }
 node{
 git 'https://github.com/exorcist007/JenkinsWorkFlowBuild.git'
-gradle sayHello
+cmd /k gradle sayHello
 }
