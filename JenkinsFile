@@ -1,10 +1,8 @@
 node{
 git 'https://github.com/exorcist007/JenkinsWorkFlowBuild.git'
- sh 'gradle createBuild'
-   sh 'cat ./built.txt'
+ gradle createBuild
 }
 node{
 git 'https://github.com/exorcist007/JenkinsWorkFlowBuild.git'
- sh 'gradle sayHello'
-   sh 'cat ./built.txt'
+gradle sayHello
 }
