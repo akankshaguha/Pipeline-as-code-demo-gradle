@@ -1,10 +1,19 @@
 #!groovy
 
-stage 'Dev'
+
+
+
+stage 'Checkout'
 node {
-    checkout scm
-   sh gradle 'clean sayHello'
-    dir('target') {stash name: 'war', includes: 'x.war'}
+   // Mark the code checkout 'stage'....
+   // Checkout code from repository
+   git 'https://github.com/exorcist007/JenkinsWorkflowBuild.git'
+}
+
+   // Mark the code build 'stage'....
+   stage 'Build'
+   node{
+  bat 'gradle build'
 }
 
 stage 'QA'
@@ -33,9 +42,6 @@ node {
     echo "Deployed to production"
 }
 
-def mvn(args) {
-    sh "${tool 'Maven 3.x'}/bin/mvn ${args}"
-}
 
 def runTests(duration) {
     node {
