@@ -13,12 +13,13 @@ node {
 // Checkout code from repository
    
 git 'https://github.com/exorcist007/JenkinsWorkflowBuild.git'
-}
-
-
 stage 'Build'
   
    
 node{
    bat 'gradle build --info'
    }
+}
+
+
+
