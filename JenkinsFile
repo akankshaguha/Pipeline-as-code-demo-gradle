@@ -41,6 +41,8 @@ bat 'gradle clean jar --info'
 }
 stage name: 'Production', concurrency: 1
 node {
+   mail bcc: '', body: '', cc: 'Aniruddha.Sinha@bitwiseglobal.com', charset: '', from: '', mimeType: '', replyTo: '', subject: 'JENKINS-FILE build', to: 'asinha161@gmail.com'
+
     echo 'Production server looks to be alive'
     echo "Deployed to production"
 }
