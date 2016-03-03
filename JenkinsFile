@@ -8,16 +8,18 @@ node {
    // Mark the code checkout 'stage'....
    // Checkout code from repository
    git 'https://github.com/exorcist007/JenkinsWorkflowBuild.git'
+   bat 'gradle build'
 }
 stage 'Checkout2'
 node{
     git 'https://github.com/exorcist007/TDF-IDF-CascadingDateFormatConversion.git'
+    bat 'gradle build'
 }
 
    // Mark the code build 'stage'....
    stage 'Build'
    node{
-  bat 'gradle build'
+ 
 }
 
 stage 'QA'
