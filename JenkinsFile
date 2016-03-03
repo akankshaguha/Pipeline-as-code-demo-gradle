@@ -13,7 +13,7 @@ node {
 // Checkout code from repository
    
 git 'https://github.com/exorcist007/JenkinsWorkflowBuild.git'
-mail bcc: '', body: 'JENKINS AUTO PIPELINE STAGE 1', cc: 'Aniruddha.Sinha@bitwiseglobal.com', charset: '', from: 'asinha161@gmail.com', mimeType: '', replyTo: '', subject: 'JENKINS-FILE build', to: 'asinha161@gmail.com'
+
 stage 'Build'
 bat 'gradle build --info'
 
@@ -25,7 +25,7 @@ node{
 git 'https://github.com/exorcist007/TDF-IDF-CascadingDateFormatConversion.git'
 stage 'Build'
 bat 'gradle build --info'
-mail bcc: '', body: '', cc: 'Aniruddha.Sinha@bitwiseglobal.com', charset: '', from: '', mimeType: '', replyTo: '', subject: 'JENKINS-FILE build', to: 'asinha161@gmail.com'
+
 }
 stage 'QA'
 node{
@@ -39,7 +39,7 @@ bat 'gradle clean jar --info'
 }
 stage name: 'Production', concurrency: 1
 node {
- mail bcc: '', body: '', cc: 'Aniruddha.Sinha@bitwiseglobal.com', charset: '', from: '', mimeType: '', replyTo: '', subject: 'JENKINS-FILE build', to: 'asinha161@gmail.com'
+
 
  echo 'Production server looks to be alive'
  echo "Deployed to production"
