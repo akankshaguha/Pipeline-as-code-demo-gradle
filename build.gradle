@@ -8,6 +8,11 @@ sourceCompatibility = 1.8
 repositories {
     mavenCentral()
 }
+jar{
+    manifest{
+
+    }
+}
 task createBuild << {
     new File("built.txt").write("Hey this is aniruddha\n")
 }
