@@ -16,7 +16,15 @@ node {
 }
 
 
-
+stage 'Checkout2'
+node{
+    git 'https://github.com/exorcist007/TDF-IDF-CascadingDateFormatConversion.git'
+   
+   stage 'Build'
+   node{
+   bat 'gradle build --info'
+   }
+}
    // Mark the code build 'stage'....
   
 
