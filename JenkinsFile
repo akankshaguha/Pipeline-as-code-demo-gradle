@@ -13,20 +13,16 @@ node {
 // Checkout code from repository
    
 git 'https://github.com/exorcist007/JenkinsWorkflowBuild.git'
-Build
+stage 'Build'
+bat 'gradle build --info'
 }
 stage 'Checkout2'
 
 node{
     
 git 'https://github.com/exorcist007/TDF-IDF-CascadingDateFormatConversion.git'
-Build
+stage 'Build'
+bat 'gradle build --info'
 
 }
-   //
-
-stage 'Build'
-node{
-   bat 'gradle build --info'
-   }
-
+   
