@@ -15,6 +15,15 @@ node {
 git 'https://github.com/exorcist007/JenkinsWorkflowBuild.git'
 Build
 }
+stage 'Checkout2'
+
+node{
+    
+git 'https://github.com/exorcist007/TDF-IDF-CascadingDateFormatConversion.git'
+Build
+
+}
+   //
 
 stage 'Build'
 node{
