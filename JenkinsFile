@@ -11,7 +11,7 @@ node {
     stage 'Build'
   
    node{
-   bat 'gradle build'
+   bat 'gradle build --info'
    }
 }
 
@@ -21,7 +21,7 @@ node{
    
    stage 'Build'
    node{
-   bat 'gradle build'
+   bat 'gradle build --info'
    }
 }
 
