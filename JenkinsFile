@@ -1,6 +1,5 @@
 #!groovy
 
-
 stage 'setJava'
 node {
 
@@ -9,32 +8,27 @@ node {
      echo env.JAVA_HOME
 
 }
-
-
 stage 'Checkout'
-
 node {
-   
-// Mark the code checkout 'stage'....
-   
-// Checkout code from repository
-   
 git 'https://github.com/exorcist007/JenkinsWorkflowBuild.git'
-
-stage 'Build'
+stage 'clean'
+bat 'gradle clean --info'
+stage 'build'
 bat 'gradle build --info'
-
+stage 'jar'
+bat 'gradle jar --info'
 }
-stage 'Checkout2'
-
-node{
-    
+stage 'Checkout'
+node {
 git 'https://github.com/exorcist007/TDF-IDF-CascadingDateFormatConversion.git'
-stage 'Build'
+stage 'clean'
+bat 'gradle clean --info'
+stage 'build'
 bat 'gradle build --info'
-
+stage 'jar'
+bat 'gradle jar --info'
 }
-stage 'QA'
+stage 'customTask'
 node{
     sleep time: 15000, unit: 'NANOSECONDS'
 //this is a custom task that gets called irrespective of the repositories being called
@@ -47,13 +41,6 @@ bat 'gradle clean jar --info'
 }
 stage name: 'Production', concurrency: 1
 node {
-
-
  echo 'Production server looks to be alive'
  echo "Deployed to production"
 }
-
-
-
-
-
