@@ -40,7 +40,7 @@ node{
 stage 'customTask'
 node{
     sleep time: 15000, unit: 'NANOSECONDS'
-this is a custom task that gets called irrespective of the repositories being called
+//this is a custom task that gets called irrespective of the repositories being called
 bat 'gradle sayHello'
 }
 stage 'jar'
