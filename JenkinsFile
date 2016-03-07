@@ -17,7 +17,7 @@ stage 'clean_JenkinsWorkflow'
 node{
 bat 'gradle clean'
 }
-stage 'build_JenkinsWorkflow;
+stage 'build_JenkinsWorkflow'
 node{
  bat 'gradle build --info'   
     
