@@ -39,8 +39,3 @@ node{
 extra batch command called: may be ignored
 bat 'gradle clean jar --info'
 }
-stage name: 'Production', concurrency: 1
-node {
- echo 'Production server looks to be alive'
- echo "Deployed to production"
-}
