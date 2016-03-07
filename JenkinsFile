@@ -45,6 +45,6 @@ bat 'gradle sayHello'
 }
 stage 'jar'
 node{
-extra batch command called: may be ignored
+//extra batch command called: may be ignored
 bat 'gradle clean jar --info'
 }
